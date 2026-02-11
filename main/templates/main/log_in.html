@@ -1,0 +1,45 @@
+{% extends 'main/base.html' %}
+
+{% block head %}
+<title>страница золотой гойды</title>
+<style>
+    body{
+        background: black;
+    }
+    .cube{
+        margin: 0 auto;
+        width: 400px;;
+        height: 250px;
+        background-color: whitesmoke;
+        border-radius: 20px;
+        padding-top: 5px;
+        margin-top: 200px;
+    }
+    .login{
+        font-size: 15px;
+        border-radius: 12px;
+        margin-left: 15px;
+    }
+</style>
+
+{% endblock %}
+{% block content %}
+<div class="cube">
+<form method="POST" action="log">
+    {% csrf_token %}
+    <p>
+        <h1 style="margin-left: 30%; font-family: Arial"">Log In</h1>
+        <input style="margin-left: 70px;" id="log" type="email" name="logEM" class="login" required placeholder="Email">
+    </p>
+    <p>
+        <input style="margin-left: 70px;" id="psw" type="password" name="psw" class="login" required placeholder="Password">
+    </p>
+    <p>
+        <a href="menu_reg" style="margin-left: 200px;">Registration</a>
+    </p>
+    <p>
+        <button type="submit" style="border-radius: 10px; font-family:cursive; font-size: 20px; margin-left: 260px;">send</button>
+    </p>
+</form>
+</div>
+{% endblock %}

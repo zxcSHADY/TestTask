@@ -1,0 +1,51 @@
+{% extends 'main/base.html' %}
+
+{% block head %}
+<title>страница золотой гойды</title>
+<style>
+    body{
+        background: black;
+    }
+    .cube{
+        margin: 0 auto;
+        width: 350px;;
+        height: 320px;
+        background-color: whitesmoke;
+        border-radius: 20px;
+        padding-top: 10px;
+        margin-top: 200px;
+    }
+    .login{
+        font-size: 15px;
+        border-radius: 12px;
+        margin-left: 15px;
+    }
+</style>
+
+{% endblock %}
+{% block content %}
+<div class="cube">
+<form method="POST" action="reg">
+    {% csrf_token %}
+    <p>
+        <h1 style="margin-left: 30%; font-family: Arial">Join Us</h1>
+        <input style="margin-left: 70px;" id="Name" name="regName" class="login" type="text" required placeholder="Name">
+    </p>
+    <p> 
+        <input style="margin-left: 70px;" id="log" type="email" name="regEM" class="login" required placeholder="Email">
+    </p>
+    <p>
+        <input style="margin-left: 70px;" id="psw" type="password" name="regpsw" class="login" required placeholder="Password">
+    </p>
+    <p>
+        <input style="margin-left: 70px;" id="psw" type="password" name="regpswR" class="login" required placeholder="Repead Password">
+    </p>
+    <p>
+        <a href="log_in" style="margin-left: 200px;">Have account?</a>
+    </p>
+    <p>
+        <button type="submit" style="border-radius: 10px; font-family: Arial; font-size: 20px; margin-left: 260px;">send</button>
+    </p>
+</form>
+</div>
+{% endblock %}
